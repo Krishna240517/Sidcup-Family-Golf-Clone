@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    color: white;
+}
+*::selection{
+    color: white;
+    background-color: #95C11E;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#nav {
+    background-color: transparent;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 120px;
+    gap: 50px;
+    position: fixed;
+    z-index: 99;
+}
+
+#nav img {
+    height: 70px;
+}
+
+#nav h4 {
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#nav h4::after{
+    content:"";
+    position: absolute;
+    left:0;
+    bottom: -2px;
+    width: 0px;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+}
+
+#nav h4:hover::after{
+    width: 100%;
+}
+
+#cursor {
+    height: 25px;
+    width: 25px;
+    background-color: #95C11E;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+    transition: transform 0.2s ease;
+}
+
+#cursor-blur {
+    height: 300px;
+    width: 300px;
+    background-color: #96c11e5f;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(50px);
+    z-index: 9;
+}
+#cursor,
+#cursor-blur {
+  pointer-events: none;
+}
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1 {
+    font-size: 130px;
+    font-weight: 900;
+    position: relative;
+}
+
+#page1 h3 {
+    font-size: 27px;
+    margin: 10px;
+}
+
+#page1 p {
+    font-size: 20px;
+    width: 50%;
+    font-weight: 120;
+}
+
+#page1 h1::before {
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    top: -6px;
+    left: -6px;
+    -webkit-text-stroke: 1px #95C11E;
+    z-index: -1;
+}
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollerapp {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4 {
+    pointer-events: auto;
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 900;
+    font-family: "Urbanist";
+    margin-right: 20px;
+    transition: all linear 0.3s;
+    color: #000;
+    -webkit-text-stroke: 2px #ffffff;
+}
+
+#scroller h4:hover {
+    color: #95C11E;
+    -webkit-text-stroke: 2px #95c11e;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+#about-us {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 50px;
+    align-items: center;
+    position: relative;
+    top: 150px;
+}
+
+#about-us img {
+    height: 200px;
+    aspect-ratio: 1;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-top: 50px;
+}
+
+#about-us-info {
+    text-align: center;
+    width: 40%;
+}
+
+#about-us-info h3 {
+    font-size: 60px;
+}
+
+#about-us-info p {
+    font-size: 19px;
+    line-height: 26px;
+}
+
+
+#cards-container{
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+    perspective: 1000px;
+}
+.card{
+    height: 86%;
+    width: 25%;
+    background-color: blue;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all ease 0.6s;
+    position: relative;
+}
+
+#card1{
+    background-image: url("card1.avif");
+    background-size: cover;
+    background-position: center;
+}
+
+#card2{
+    background-image: url("card2.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+#card3{
+    background-image: url("card3.avif");
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    padding: 30px;
+    padding-top: 160px;
+    opacity:0;
+    transition: all ease 0.6s;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.overlay h4{
+    color: black;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-bottom: 20px;
+}
+
+.overlay p{
+    color: #000;
+    font-size: 18px;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}   
+
+.card:hover{
+    transform: rotate3d(1,1,0,20deg);
+}
+
+#page3{
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+#container{
+    height: 60vh;
+    border: 2px solid white;
+    position: relative;
+    top: 60px;
+    background-image: linear-gradient(to left,green,yellow);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 15%;
+}
+
+#container h3{
+    color: black;
+    text-transform: uppercase;
+    font-size:40px;
+    font-weight: 900;
+    line-height: 40px;
+}
+
+.show{
+    padding-top: 150px;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.containerImage{
+    height: 70vh;
+    width: 50%;
+    border-radius: 15px;
+    background-image: url("https://images.pexels.com/photos/1640771/pexels-photo-1640771.jpeg");
+    background-size: cover;
+    animation: gallery 5s linear infinite;
+}
+@keyframes gallery {
+    0%{
+        background-image: url("https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg");
+        background-size: cover;
+    }
+    50%{
+        background-image: url("https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg");
+        background-size: cover;
+    }
+    100%{
+        background-image: url("https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg");
+        background-size: cover;
+    }
+}
+
+.containerContent{
+    height: 80%;
+    width: 55%;
+    padding: 15px;
+}
+
+.containerContent h4{
+    font-size: 73px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.containerPara {
+    margin-top: 40px;
+    padding-left:5%;
+    padding-right:5%;
+}
+.containerPara p {
+    font-size: 20px;
+}
+.para p{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 8px 40px;
+}
+
+#line2{
+    margin-top: 50px;
+}
+
+#page4{
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+}
+
+#page4>p{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 700;
+    width: 50%;
+    text-align: center;
+    line-height: 50px;
+}
+
+#page4 img {
+    position: absolute;
+    height: 60px;
+}
+#page4 #colon1 {
+    left: 15%;
+    top: 20%;
+}
+
+#page4 #colon2 {
+    right: 15%;
+    bottom: 20%;
+}
+
+#page5 {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10rem;
+    position: relative;
+}
+
+
+.elem {
+    height: 70%;
+    width: 25%;
+    background-color: #95C11E;
+    border-radius: 20px;
+    overflow:hidden;
+    position: relative;
+}
+.elem h3 {
+    height: 100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 900;
+    position: absolute;
+    font-size: 35px;
+    z-index: 10;
+    transition: all ease 1s;
+}
+
+.elem img {
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    scale: 1.1;
+    transition: all ease 1s;
+}
+
+.elem:hover h3{
+    color: #fff;
+    background-color: transparent
+}
+
+.elem:hover img{
+    z-index: 1;
+    scale: 1;
+}
+
+#page5 h1{
+    position: absolute;
+    font-family: 'Urbanist';
+    top:-30%;
+    text-transform: uppercase;
+    font-size: 90px;
+    color: #000;
+    -webkit-text-stroke: 2px #fff;
+}
+
+#page6 {
+    height: 70vh;
+    width: 100%;
+    background-color: #95C11E;
+}
