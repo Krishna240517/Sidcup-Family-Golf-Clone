@@ -3,14 +3,11 @@
 Welcome to my **Sidcup Family Golf Clone** project!  
 This is a **beginner-friendly attempt** to recreate the feel and layout of the official Sidcup Family Golf website. While it’s not a pixel-perfect or complete clone, this version reflects my **first hands-on experience** working with modern frontend tools.
 
-## 🚀 Features Implemented
-
-- ✅ Landing page with responsive layout  
+## 🚀 Features Implemented 
 - ✅ Animated text and transitions  
 - ✅ Simple hover effects and navigation bar  
 - ✅ Custom fonts and assets used to match original site  
 - ✅ Scroll animations with smooth experience  
-- ✅ Mobile responsiveness to some extent
 
 ---
 
