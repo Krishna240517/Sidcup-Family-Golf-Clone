@@ -27,7 +27,7 @@ As a **first-timer**, this project taught me:
 - HTML5  
 - CSS3  
 - JavaScript (vanilla)  
-- [GSAP](https://greensock.com/gsap/) for animations *(if used)*  
+- [GSAP](https://greensock.com/gsap/) for animations
 - Fonts from [Google Fonts](https://fonts.google.com/)  
 - Inspiration: [Sidcup Family Golf (Official Site)](https://www.sidcupfamilygolf.com/)
 
